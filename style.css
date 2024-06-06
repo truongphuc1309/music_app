@@ -1,0 +1,163 @@
+#main {
+    height: 100vh;
+    background-color: var(--primary);
+    display: flex;
+    padding: 10px;
+}
+
+.main-component {
+    background-color: var(--secondary);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    transition: all 0.2s linear;
+}
+
+.main-component:hover {
+    box-shadow: var(--box-shadow-hover);
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+    margin-right: 10px;
+}
+
+.side-bar.expand {
+    width: 40%;
+}
+
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30%;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+}
+
+.library {
+    flex: 1;
+}
+
+.nav-bar-component {
+    color: var(--white);
+    padding: 4px 12px;
+    font-size: 1.6rem;
+    transition: all 0.2s linear;
+}
+
+.nav-bar-component i {
+    font-size: 2rem;
+    height: 20px;
+    width: 20px;
+    margin-right: 20px;
+}
+
+.nav-bar-component.active {
+    color: var(--third);
+}
+
+.nav-bar-component:not(.active):hover {
+    transform: scale(1.14);
+    transform-origin: 0;
+}
+
+.library {
+    padding: 8px 12px;
+}
+
+.library-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+}
+
+.library-header-title {
+    display: flex;
+    margin-right: 30px;
+}
+
+.library-header-title i {
+    margin-right: 14px;
+}
+
+.library-options {
+    display: flex;
+}
+
+.library-add {
+    margin-right: 10px;
+}
+
+.library-header .component {
+    background-color: unset;
+    color: #a7a7a7;
+    font-size: 1.6rem;
+    transition: all 0.2s linear;
+}
+
+.library-header .component:hover {
+    color: var(--white);
+}
+
+.library-header .component:not(.library-header-title) {
+    background-color: transparent;
+    padding: 10px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+.library-header .component:not(.library-header-title):hover {
+    background-color: #a7a7a71e;
+}
+
+.library-header .component i {
+    font-size: 2rem;
+}
+
+.library-box {
+    background-color: var(--primary);
+    border-radius: 20px;
+    color: var(--white);
+    padding: 16px 20px;
+    margin: 8px 0 20px 0;
+}
+
+.box-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.box-content {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+}
+
+.box-btn {
+    font-size: 1.6rem;
+    font-weight: 600;
+    background-color: var(--third);
+    padding: 4px 16px;
+    border-radius: 20px;
+    transition: all 0.2s linear;
+}
+
+.box-btn:hover {
+    transform: scale(1.05);
+}
+
+/*------------Content-----------*/
+
+.content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    flex: 1;
+    border: unset;
+}

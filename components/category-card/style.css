@@ -1,0 +1,29 @@
+.content-items {
+    margin-right: -12px;
+}
+
+.category-card {
+    position: relative;
+    width: calc(25% - 24px);
+    height: 174px;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.category-title {
+    color: var(--white);
+    font-size: 2.4rem;
+}
+
+.category-img {
+    position: absolute;
+    height: 80%;
+    width: 50%;
+    top: 30%;
+    right: -10%;
+    transform: rotate(24deg);
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="./style.css" rel="stylesheet" />
+        <link href="./libs/style.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const isLogined = localStorage.getItem('uid');
+            if (!isLogined) window.location.replace('/pages/auth');
+        </script>
+        <div id="main">
+            <aside class="side-bar">
+                <nav class="nav-bar main-component">
+                    <a
+                        href="./pages/home"
+                        class="nav-bar-component active"
+                        target="content"
+                        ><i class="fa-solid fa-house"></i>Home</a
+                    >
+                    <a
+                        href="./pages/search"
+                        class="nav-bar-component"
+                        target="content"
+                        ><i class="fa-solid fa-magnifying-glass"></i>Search</a
+                    >
+                    <a href="" class="nav-bar-component" target="content"
+                        ><i class="fa-solid fa-ranking-star"></i>Ranking</a
+                    >
+                    <a href="" class="nav-bar-component" target="content"
+                        ><i class="fa-solid fa-user-tie"></i>Artists</a
+                    >
+                </nav>
+                <div class="library main-component">
+                    <header class="library-header">
+                        <button
+                            class="library-header-title component align-center"
+                        >
+                            <i class="fa-solid fa-bookmark"></i>
+                            Your library
+                        </button>
+                        <div class="library-options">
+                            <button class="library-add component align-center">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                            <button
+                                class="library-transform component align-center"
+                            >
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </header>
+                    <div class="library-box">
+                        <p class="box-title">Create your first playlist</p>
+                        <p class="box-content">It's easy, we'll help you</p>
+                        <button class="box-btn">Create playlist</button>
+                    </div>
+                    <div class="library-box">
+                        <p class="box-title">
+                            Let's find some podcasts to follow
+                        </p>
+                        <p class="box-content">
+                            We'll keep you updated on new episodes
+                        </p>
+                        <button class="box-btn">Browse podcasts</button>
+                    </div>
+                </div>
+            </aside>
+            <iframe
+                src="./pages/home/"
+                class="content main-component"
+                name="content"
+            ></iframe>
+        </div>
+        <script src="./index.js"></script>
+    </body>
+</html>

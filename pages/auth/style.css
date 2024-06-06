@@ -1,0 +1,124 @@
+#main {
+    background-image: url("../../assets/image/auth-background.png");
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.sign-in,
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--white);
+    position: absolute;
+    height: 600px;
+    width: 400px;
+    border-radius: 20px;
+    transition: all 0.4s linear;
+    border: 2px solid var(--input-border);
+    box-shadow: var(--box-shadow);
+    padding: 40px;
+}
+
+.title {
+    font-size: 3.2rem;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.message {
+    margin-top: 6px;
+    color: #8e1d1d;
+}
+
+.show-password {
+    position: absolute;
+    font-size: 1.4rem;
+    top: 42px;
+    right: 6%;
+    cursor: pointer;
+}
+
+.forgot-password {
+    font-size: 1.6rem;
+    color: var(--fourth);
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+button {
+    font-size: 1.6rem;
+    color: white;
+    background-color: var(--third);
+    margin: 20px 0;
+    height: 46px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 1px 10px rgba(2, 202, 171, 0.35);
+    transition: all 0.2s linear;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.sign-in p,
+.sign-up p {
+    font-size: 1.4rem;
+}
+
+.sign-up-btn,
+.sign-in-btn {
+    font-size: 1.8rem;
+    color: var(--fourth);
+    cursor: pointer;
+}
+
+.sign-in {
+    background-color: var(--secondary);
+    transform: translate(-20px, -20px);
+}
+
+.sign-up {
+    background-color: var(--primary);
+    transform: translate(20px, 20px);
+}
+
+.sign-up .show-password {
+    top: 16px;
+}
+
+.transform.sign-in {
+    transform: translateX(-260px);
+}
+
+.transform.sign-up {
+    transform: translateX(260px);
+}
+
+.up {
+    z-index: 999;
+}
+
+.control {
+    position: absolute;
+    bottom: 100px;
+}

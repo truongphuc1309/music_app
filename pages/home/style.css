@@ -1,0 +1,23 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex: 1;
+    padding: 8px 12px;
+    background-color: var(--secondary);
+    transition: all 0.2s linear;
+}
+
+.search-form {
+    display: none;
+}
+
+.content-main {
+    padding: 8px 12px;
+    margin-top: 140px;
+    color: var(--white);
+}

@@ -1,0 +1,156 @@
+.content-header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 20px 36px;
+    background-color: var(--secondary);
+    border-radius: 20px 20px 0 0;
+    z-index: 9999;
+}
+
+.content-header-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.turn-right,
+.turn-left {
+    margin-right: 16px;
+}
+
+.search-form {
+    margin-left: 20px;
+    width: 300px;
+    background-color: #052450;
+    border-radius: 20px;
+    padding: 14px 18px;
+    border: 1px solid transparent;
+    transition: all 0.2s linear;
+}
+
+.search-form:hover {
+    border: 1px solid var(--input-border);
+}
+
+.fa-magnifying-glass {
+    margin-right: 10px;
+    font-size: 1.6rem;
+    color: var(--white);
+}
+
+.search-input {
+    font-size: 1.6rem;
+    color: var(--white);
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.search-input {
+    font-size: 1.6rem;
+    width: 92%;
+}
+
+.turn-right,
+.turn-left,
+.notification,
+.user {
+    font-size: 1.6rem;
+    background-color: var(--fourth);
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.explore-premium,
+.install-app {
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 20px;
+}
+
+.explore-premium,
+.user {
+    background-color: var(--third);
+}
+
+.install-app {
+    background-color: var(--fourth);
+}
+
+.explore-premium,
+.install-app,
+.user,
+.notification {
+    margin-left: 10px;
+}
+
+.user {
+    position: relative;
+}
+
+.user-options {
+    top: calc(100% + 20px);
+    background-color: var(--secondary);
+    right: 0;
+    position: absolute;
+    box-shadow: var(--box-shadow);
+    border-radius: 2px;
+    color: var(--white);
+    list-style: none;
+    min-width: 200px;
+    padding: 4px;
+    z-index: 999;
+    display: none;
+}
+
+.user.active .user-options {
+    display: block;
+}
+
+.user-options>.component {
+    display: flex;
+    justify-content: start;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 12px 8px 12px 12px;
+    font-size: 1.4rem;
+    transition: all 0.2s linear;
+}
+
+.user-options>.component:hover {
+    background-color: #052450;
+}
+
+.logout {
+    border-top: 2px solid var(--primary);
+}
+
+.filter {
+    margin-top: 28px;
+}
+
+.filter>.component {
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 20px;
+    margin-right: 10px;
+    background-color: var(--white);
+}
+
+.filter>.component.active {
+    background-color: #ff5470;
+}

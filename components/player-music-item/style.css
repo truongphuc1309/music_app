@@ -1,0 +1,86 @@
+.player__musics-list-item {
+    color: #839aad;
+    display: flex;
+    align-items: center;
+    padding: 20px 12px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.player__musics-list-item:active {
+    opacity: 0.7;
+}
+
+.player__musics-list-item.active:active {
+    opacity: 1;
+}
+
+.player__musics-list-item.active {
+    background-color: var(--third);
+    color: var(--white);
+}
+
+.player__item-status-btn {
+    color: var(--primary);
+    font-size: 1.2rem;
+    height: 30px;
+    width: 30px;
+    background-image: linear-gradient(-40deg, var(--fourth), var(--white));
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.fa-pause {
+    display: none;
+}
+
+.player__item-status-btn.pause .fa-pause {
+    display: block;
+}
+
+.player__item-status-btn.pause .fa-play {
+    display: none;
+}
+
+.player__item-status-btn:active {
+    color: #64606c;
+    background-image: none;
+    box-shadow: inset 0 0px 2px rgba(0, 0, 0, 0.6);
+}
+
+
+.player__item-music-infor {
+    margin-left: 20px;
+}
+
+.player__item-music-name {
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.player__musics-list-item.active .player__item-music-name {
+    overflow: unset;
+    text-overflow: unset;
+    display: unset;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    -webkit-box-orient: unset;
+}
+
+.player__item-artist-name {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.player__musics-list-item.active .player__item-artist-name {
+    margin-top: 4px;
+}
