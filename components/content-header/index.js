@@ -9,7 +9,7 @@ function ContentHeader() {
                     </button>
                     <div class="search-form align-center">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" class="search-input" />
+                        <input type="text" class="search-input" placeholder="What do you want to play?"/>
                     </div>
                 </div>
                 <div class="header-right">

@@ -1,0 +1,82 @@
+.ranking-card {
+    padding: 14px 12px;
+    width: 100%;
+    display: flex;
+    border-radius: 4px;
+    border-bottom: 1px solid #4f89fc64;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+.ranking-card:nth-child(1) .card-number {
+    color: var(--fourth);
+}
+
+.ranking-card:nth-child(2) .card-number {
+    color: var(--third);
+}
+
+.ranking-card:nth-child(3) .card-number {
+    color: #ff5470;
+}
+
+
+.ranking-card:hover {
+    background-color: #021b3fca;
+}
+
+.card-left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.card-number {
+    text-align: center;
+    color: var(--white);
+    font-size: 4rem;
+    width: 16%;
+}
+
+.card-img {
+    height: 54px;
+    width: 54px;
+    border-radius: 10px;
+}
+
+.card-infor {
+    display: flex;
+    height: 100%;
+    margin-left: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card-name {
+    color: var(--white);
+    font-weight: 500;
+}
+
+.card-artist {
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: #ccc;
+}
+
+.card-right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-album,
+.total-time {
+    color: #ccc;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.total-time {
+    margin-right: 10px;
+}
