@@ -201,6 +201,16 @@ const audios = [
         img: `${pre}180qMHRtvf3hgZuYVojxrvap9WH6YwOJB`,
         path: 'https://res.cloudinary.com/diy8dw4cd/video/upload/v1717346078/music_app/audio/fproqtxy7zdean9zht7d.mp3',
     },
+    {
+        id: 'a021',
+        name: 'Đừng làm trái tim anh đau',
+        artist: 'Sơn Tùng MTP',
+        type: 'Music',
+        album: 'Đừng làm trái tim anh đau',
+        total: '04:39',
+        img: `https://i.scdn.co/image/ab67616d0000b273a1bc26cdd8eecd89da3adc39`,
+        path: 'https://res.cloudinary.com/diy8dw4cd/video/upload/v1718225480/music_app/audio/du6ipshjbc6y07jd2lwp.mp3',
+    },
 ];
 
 export default audios;

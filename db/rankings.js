@@ -1,4 +1,5 @@
 const rankings = [
+    'a021',
     'a002',
     'a017',
     'a001',
@@ -8,7 +9,6 @@ const rankings = [
     'a007',
     'a009',
     'a010',
-    'a012',
 ];
 
 export default rankings;

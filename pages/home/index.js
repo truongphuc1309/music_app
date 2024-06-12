@@ -1,124 +1,124 @@
-import ContentComponent from '../../components/content-component/index.js';
-import ContentCard from '../../components/content-card/index.js';
 import { addFooter } from '../../components/footer/index.js';
 import { addContentHeader } from '../../components/content-header/index.js';
-import NewFeedService from '../../services/newfeed.service.js';
-import AudioService from '../../services/audio.service.js';
+import ContentComponent from '../../components/content-component/index.js';
+import ContentCard from '../../components/content-card/index.js';
+import HomeService from '../../services/home.service.js';
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const userId = localStorage.getItem('uid');
+const sliderImgs = $$('.slider-img');
 
 class App {
-    static renderAll() {
-        const newFeed = NewFeedService.getNewFeed(userId);
-        const contentMain = $('.content-main');
-        contentMain.innerHTML = '';
-        newFeed.subjects.forEach((subject) => {
-            let itemEles = subject.items.map((e) =>
-                ContentCard({
-                    title: e.name,
-                    subTitle: e.artist,
-                    img: e.img,
-                    id: e.id,
-                })
-            );
-            itemEles = itemEles.join('');
-            const contentComponent = ContentComponent({
-                title: subject.name,
-                children: itemEles,
-            });
+    static activedIndex = 2;
 
-            contentMain.innerHTML += contentComponent;
-        });
+    static loadSlider() {
+        try {
+            const activedImg = $('.slider-list .active');
+            activedImg.classList.remove('active');
+        } catch (error) {}
+
+        sliderImgs[this.activedIndex].classList.add('active');
+
+        for (let index in sliderImgs) {
+            const priority = Math.abs(index - this.activedIndex);
+            try {
+                sliderImgs[index].style.zIndex = 99 - priority;
+            } catch (error) {}
+
+            if (index < this.activedIndex) {
+                sliderImgs[index].style.transform = `translateX(${
+                    140 * -priority
+                }px) 
+                scale(${1 - 0.3 * priority}) perspective(400px) rotateY(40deg)`;
+            } else if (index > this.activedIndex) {
+                sliderImgs[index].style.transform = `translateX(${
+                    140 * priority
+                }px)
+                scale(${
+                    1 - 0.3 * priority
+                }) perspective(400px) rotateY(-40deg)`;
+            }
+        }
     }
 
-    static rederMusic() {
-        const musics = AudioService.getAllMusics();
-        let musicEles = musics.map((e) =>
-            ContentCard({
-                title: e.name,
-                subTitle: e.artist,
-                img: e.img,
-                id: e.id,
-            })
-        );
-
-        musicEles = musicEles.join('');
-        const contentComponent = ContentComponent({
-            title: 'Music',
-            children: musicEles,
-        });
-
-        const contentMain = $('.content-main');
-        contentMain.innerHTML = contentComponent;
-    }
-
-    static rederPodcast() {
-        const podcasts = AudioService.getAllPodcasts();
-        let podcastEles = podcasts.map((e) =>
-            ContentCard({
-                title: e.name,
-                subTitle: e.artist,
-                img: e.img,
-                id: e.id,
-            })
-        );
-
-        podcastEles = podcastEles.join('');
-        const contentComponent = ContentComponent({
-            title: 'Podcast',
-            children: podcastEles,
-        });
-
-        const contentMain = $('.content-main');
-        contentMain.innerHTML = contentComponent;
-    }
-
-    static switchFilter() {
-        const switchBtn = $$('.filter>.component');
-        const allBtn = $('.all');
-        const musicBtn = $('.music');
-        const podcastsBtn = $('.podcasts');
-
-        switchBtn.forEach((ele) => {
-            ele.addEventListener('click', (e) => {
-                const activedBtn = $('.filter .active');
-                if (activedBtn) activedBtn.classList.remove('active');
-                e.target.classList.add('active');
-            });
-        });
-
-        allBtn.addEventListener('click', this.renderAll);
-        musicBtn.addEventListener('click', this.rederMusic);
-        podcastsBtn.addEventListener('click', this.rederPodcast);
-    }
-
-    static toggleUserOptions() {
-        const userBtn = $('.user');
-        userBtn.onclick = () => {
-            userBtn.classList.toggle('active');
+    static nextSlide() {
+        const nextBtn = $('.next-btn');
+        nextBtn.onclick = () => {
+            if (this.activedIndex < sliderImgs.length - 1) {
+                this.activedIndex++;
+                this.loadSlider();
+                clearInterval(auto);
+                this.autoSlide();
+            }
         };
     }
 
-    static logOut() {
-        const logOutBtn = $('.user .logout');
-        logOutBtn.onclick = () => {
-            localStorage.removeItem('uid');
-            window.parent.location.replace('/pages/auth');
+    static prevSlide() {
+        const nextBtn = $('.prev-btn');
+        nextBtn.onclick = () => {
+            if (this.activedIndex > 0) {
+                this.activedIndex--;
+                this.loadSlider();
+                clearInterval(auto);
+                this.autoSlide();
+            }
         };
     }
 
-    static add;
+    static autoSlide() {
+        const nextBtn = $('.next-btn');
+        const prevBtn = $('.prev-btn');
+        auto = setInterval(() => {
+            if (App.activedIndex === 0) autoBtn = nextBtn;
+            else if (App.activedIndex === sliderImgs.length - 1)
+                autoBtn = prevBtn;
+            autoBtn.click();
+        }, 5000);
+    }
+
+    static render() {
+        const homeItems = HomeService.getAllHomeItems();
+        console.log('::items::', homeItems);
+        try {
+            homeItems.forEach((item) => {
+                const eles = item.items
+                    .map((e) =>
+                        ContentCard({
+                            title: e.name,
+                            subTitle: e.artist,
+                            id: e.id,
+                            img: e.img,
+                        })
+                    )
+                    .join('');
+                const homeComponent = ContentComponent({
+                    title: item.name,
+                    children: eles,
+                });
+                const contentMain = $('.content-components');
+                contentMain.innerHTML += homeComponent;
+            });
+        } catch (error) {}
+    }
+
     static start() {
         addContentHeader();
         addFooter();
-        this.renderAll();
-        this.switchFilter();
-        this.toggleUserOptions();
-        this.logOut();
+        this.render();
+        this.loadSlider();
+        this.nextSlide();
+        this.prevSlide();
     }
 }
+
+const nextBtn = $('.next-btn');
+const prevBtn = $('.prev-btn');
+let autoBtn = nextBtn;
+let auto = setInterval(() => {
+    if (App.activedIndex === 0) autoBtn = nextBtn;
+    else if (App.activedIndex === sliderImgs.length - 1) autoBtn = prevBtn;
+    autoBtn.click();
+}, 5000);
 
 App.start();

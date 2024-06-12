@@ -15,7 +15,6 @@ class App {
     static switchPage() {
         const switchPageBtns = $$('.nav-bar-component');
         switchPageBtns.forEach((element) => {
-            console.log(element);
             element.onclick = (event) => {
                 const activedBtn = $('.nav-bar-component.active');
                 activedBtn.classList.remove('active');
