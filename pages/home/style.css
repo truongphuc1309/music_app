@@ -89,3 +89,36 @@ body::-webkit-scrollbar {
     background-color: var(--third);
     box-shadow: 0 0 10px var(--third);
 }
+
+
+@media (max-width: 768px) {
+    .slider-wrapper {
+        width: 80%;
+    }
+
+    .slider-list {
+        width: 60%;
+        height: 50%;
+    }
+}
+
+@media (max-width: 560px) {
+    .content-main {
+        margin-top: 0;
+        padding: 0;
+    }
+
+    .slider-wrapper {
+        width: 100%;
+        height: 400px;
+    }
+
+    .slider-list {
+        height: 40%;
+    }
+
+    .content-components {
+        margin-top: -100px;
+    }
+
+}

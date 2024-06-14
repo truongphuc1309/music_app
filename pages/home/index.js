@@ -3,6 +3,13 @@ import { addContentHeader } from '../../components/content-header/index.js';
 import ContentComponent from '../../components/content-component/index.js';
 import ContentCard from '../../components/content-card/index.js';
 import HomeService from '../../services/home.service.js';
+import { logOut, toggleUserOptions } from '../../utils/logOut.js';
+import removeLoading from '../../utils/removeLoading.js';
+import {
+    backPage,
+    forwardPage,
+    activePageBtn,
+} from '../../utils/controlHistory.js';
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
@@ -79,7 +86,6 @@ class App {
 
     static render() {
         const homeItems = HomeService.getAllHomeItems();
-        console.log('::items::', homeItems);
         try {
             homeItems.forEach((item) => {
                 const eles = item.items
@@ -103,12 +109,18 @@ class App {
     }
 
     static start() {
+        activePageBtn('./pages/home/');
         addContentHeader();
         addFooter();
+        backPage();
+        forwardPage();
+        toggleUserOptions();
+        logOut();
         this.render();
         this.loadSlider();
         this.nextSlide();
         this.prevSlide();
+        removeLoading();
     }
 }
 

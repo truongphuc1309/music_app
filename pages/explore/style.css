@@ -21,3 +21,11 @@ body::-webkit-scrollbar {
     margin-top: 140px;
     color: var(--white);
 }
+
+/*===========responsive==========*/
+
+@media (max-width: 560px) {
+    .content-main {
+        padding: unset;
+    }
+}

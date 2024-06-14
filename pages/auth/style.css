@@ -122,3 +122,16 @@ button:hover {
     position: absolute;
     bottom: 100px;
 }
+
+/*======responsive=========*/
+
+@media (max-width: 560px) {
+
+    .sign-in,
+    .sign-up {
+        width: 100vw;
+        height: 100vh;
+        transform: unset;
+        border-radius: unset;
+    }
+}

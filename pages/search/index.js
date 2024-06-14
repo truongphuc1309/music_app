@@ -3,6 +3,13 @@ import { addContentHeader } from '../../components/content-header/index.js';
 import CategoryCard from '../../components/category-card/index.js';
 import ContentComponent from '../../components/content-component/index.js';
 import CategoryService from '../../services/category.service.js';
+import { logOut, toggleUserOptions } from '../../utils/logOut.js';
+import removeLoading from '../../utils/removeLoading.js';
+import {
+    activePageBtn,
+    forwardPage,
+    backPage,
+} from '../../utils/controlHistory.js';
 
 const $ = document.querySelector.bind(document);
 
@@ -27,9 +34,15 @@ class App {
         contentMain.innerHTML = contentComponentEle;
     }
     static start() {
+        activePageBtn('./pages/search/');
         addContentHeader();
         addFooter();
+        forwardPage();
+        backPage();
+        toggleUserOptions();
+        logOut();
         this.render();
+        removeLoading();
     }
 }
 App.start();

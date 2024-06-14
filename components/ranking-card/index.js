@@ -1,7 +1,7 @@
 function RankingCard({ index, id, name, artist, album, total, img }) {
     return `<a
                 href="/pages/player/?id=${id}"
-                class="ranking-card"
+                class="ranking-card loadingLR"
             >
                 <div class="card-left">
                     <h1 class="card-number">${index}</h1>

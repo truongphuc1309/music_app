@@ -389,3 +389,21 @@ html {
 .player__musics-list::-webkit-scrollbar {
     display: none;
 }
+
+/*===========responsive==========*/
+
+@media (max-width: 1100px) {
+    #app {
+        position: fixed;
+        transform: scaleY(0.9);
+        transform-origin: 0px 0px;
+        top: 0;
+        bottom: 80px;
+    }
+}
+
+@media (max-width: 560px) {
+    .player__control-btns {
+        width: 100%;
+    }
+}

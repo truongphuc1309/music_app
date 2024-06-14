@@ -4,6 +4,14 @@ import { addFooter } from '../../components/footer/index.js';
 import { addContentHeader } from '../../components/content-header/index.js';
 import NewFeedService from '../../services/newfeed.service.js';
 import AudioService from '../../services/audio.service.js';
+import { logOut, toggleUserOptions } from '../../utils/logOut.js';
+import removeLoading from '../../utils/removeLoading.js';
+
+import {
+    backPage,
+    forwardPage,
+    activePageBtn,
+} from '../../utils/controlHistory.js';
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
@@ -95,29 +103,17 @@ class App {
         podcastsBtn.addEventListener('click', this.rederPodcast);
     }
 
-    static toggleUserOptions() {
-        const userBtn = $('.user');
-        userBtn.onclick = () => {
-            userBtn.classList.toggle('active');
-        };
-    }
-
-    static logOut() {
-        const logOutBtn = $('.user .logout');
-        logOutBtn.onclick = () => {
-            localStorage.removeItem('uid');
-            window.parent.location.replace('/pages/auth');
-        };
-    }
-
-    static add;
     static start() {
+        activePageBtn('./pages/explore/');
         addContentHeader();
         addFooter();
+        backPage();
+        forwardPage();
         this.renderAll();
         this.switchFilter();
-        this.toggleUserOptions();
-        this.logOut();
+        toggleUserOptions();
+        logOut();
+        removeLoading();
     }
 }
 

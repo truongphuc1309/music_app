@@ -7,6 +7,8 @@
     --box-shadow: 0px 2px 6px #0e4284;
     --box-shadow-hover: 0px 2px 10px #1a56a5;
     --white: #d8e9ff;
+    --loading: #05224b;
+    --loading2: #263878;
 }
 
 html {
@@ -58,5 +60,61 @@ button {
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: scale(0.96);
+}
+
+.loadingLR,
+.loadingTD {
+    position: relative;
+    overflow: hidden;
+}
+
+.loadingLR::after,
+.loadingLR::before,
+.loadingTD::after,
+.loadingTD::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.loadingLR::after,
+.loadingTD::after {
+    background-color: var(--loading);
+    z-index: 999;
+}
+
+.loadingLR::before {
+    background-image: linear-gradient(90deg, transparent, var(--loading2), transparent);
+    animation: loadingLR 1s ease-in-out alternate infinite;
+    z-index: 9999;
+}
+
+.loadingTD::before {
+    background-image: linear-gradient(180deg, transparent, var(--loading2), transparent);
+    animation: loadingTD 1s ease-in-out alternate infinite;
+    z-index: 9999;
+}
+
+@keyframes loadingLR {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(50%);
+    }
+}
+
+@keyframes loadingTD {
+    from {
+        transform: translateY(-50%);
+    }
+
+    to {
+        transform: translateY(50%);
+    }
 }

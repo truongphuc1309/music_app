@@ -1,3 +1,8 @@
+.loadingLR,
+.loadingTD {
+    scale: 0.9;
+}
+
 .ranking-card {
     padding: 14px 12px;
     width: 100%;
@@ -47,6 +52,7 @@
 .card-infor {
     display: flex;
     height: 100%;
+    width: 50%;
     margin-left: 10px;
     flex-direction: column;
     justify-content: space-evenly;
@@ -55,11 +61,17 @@
 .card-name {
     color: var(--white);
     font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .card-artist {
     font-weight: 500;
     font-size: 1.4rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     color: #ccc;
 }
 
@@ -79,4 +91,19 @@
 
 .total-time {
     margin-right: 10px;
+}
+
+/*===========Content-card==================*/
+@media (max-width: 560px) {
+    .category-card {
+        height: 132px;
+    }
+
+    .card-left {
+        width: 100%;
+    }
+
+    .card-right {
+        display: none;
+    }
 }

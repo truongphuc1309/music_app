@@ -1,5 +1,5 @@
 function ContentCard({ title, subTitle, img, id }) {
-    return `<a href = "/pages/player/?id=${id}"class="content-card">
+    return `<a href = "/pages/player/?id=${id}"class="content-card loadingLR">
                 <img loading = "lazy" src="${img}" alt="" class="card-img">
                 <h1 class="card-title">${title}</h1>
                 <h3 class="card-sub-title">${subTitle}</h3>

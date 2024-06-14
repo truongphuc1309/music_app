@@ -154,3 +154,32 @@
 .filter>.component.active {
     background-color: #ff5470;
 }
+
+@media (max-width: 560px) {
+    .content-header {
+        padding: 20px 24px;
+    }
+
+    .search-form {
+        width: 48px;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    .search-form i {
+        margin-right: unset;
+    }
+
+    .search-input {
+        display: none;
+        border-radius: 50%;
+    }
+
+    .explore-premium,
+    .install-app {
+        display: none;
+    }
+}
