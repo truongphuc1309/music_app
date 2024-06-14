@@ -13,7 +13,7 @@ class AudioService {
     }
 
     static getAllPodcasts() {
-        return audios.filter((e) => e.type === 'Podcasts');
+        return audios.filter((e) => e.type === 'Podcast');
     }
 
     static getIndexOfAudioById(id) {

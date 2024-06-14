@@ -26,6 +26,7 @@
     top: 30%;
     right: -10%;
     transform: rotate(24deg);
+    object-fit: cover;
 }
 
 /*===========Content-card==================*/

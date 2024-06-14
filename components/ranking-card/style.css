@@ -47,6 +47,7 @@
     height: 54px;
     width: 54px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .card-infor {

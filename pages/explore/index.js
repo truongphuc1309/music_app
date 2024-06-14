@@ -40,6 +40,7 @@ class App {
 
             contentMain.innerHTML += contentComponent;
         });
+        removeLoading();
     }
 
     static rederMusic() {
@@ -61,6 +62,8 @@ class App {
 
         const contentMain = $('.content-main');
         contentMain.innerHTML = contentComponent;
+
+        removeLoading();
     }
 
     static rederPodcast() {
@@ -82,6 +85,8 @@ class App {
 
         const contentMain = $('.content-main');
         contentMain.innerHTML = contentComponent;
+
+        removeLoading();
     }
 
     static switchFilter() {
@@ -113,7 +118,6 @@ class App {
         this.switchFilter();
         toggleUserOptions();
         logOut();
-        removeLoading();
     }
 }
 
